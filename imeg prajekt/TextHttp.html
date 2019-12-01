@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+            <button type="button" onclick="next()">Change Content</button>
+
+    </div>
+    <script>
+        next=()=>{
+            console.log("rhojthtjhgtiuj")
+            myHttp=new XMLHttpRequest();
+            myHttp.onload =()=>{
+                // if (this.readyState == 4 && this.status == 200) {
+                    console.log(this.responseText);
+                    let a=JSON.parse(this.responseText)
+                    console.log(this.a);
+      document.getElementById("demo").innerHTML = this.responseText;
+   
+            //}
+        };
+        myHttp.open("GET","https://jsonplaceholder.typicode.com/posts/");
+        myHttp.send();
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        sum = (num1, num2, num3) => {
+            console.log('i sum ' + num1 + ', ' + num2 + ', ' + num3)
+            return num1 + num2 + num3;
+        };
+
+        mult = (num1, num2, num3) => {
+            console.log('i nult ' + num1 + ', ' + num2 + ', ' + num3)
+            return num1 * num2 * num3;
+        };
+
+        total = sum(20, 5, 3);
+        totalMult = mult(10, 5, 3);
+        console.log(total);
+        console.log(totalMult);
+
+        sumAsyc2 = (num1, num2, num3,collbace) => {
+            console.log('i sumAsyc2 ' + num1 + ', ' + num2 + ', ' + num3);
+            setTimeout(()=>console.log(collbace(num1, num2, num3))
+            , 3000)
+        };
+
+        sumAsyc = (num1, num2, num3,collbace) => {
+            console.log('i sumAsyc ' + num1 + ', ' + num2 + ', ' + num3);
+            setTimeout(()=>console.log(collbace(num1, num2, num3))
+            , 1000)
+        };
+
+        multAsyc = (num1, num2, num3,collbace) => {
+            console.log('i multAsyc ' + num1 + ', ' + num2 + ', ' + num3);
+            setTimeout(()=>console.log(collbace(num1, num2, num3))
+            , 2000)
+        };
+
+
+        sumAsyc2(10, 20, 30,sum);
+        multAsyc(15,2,8,mult);
+        sumAsyc(1, 20, 30,sum);
+        mult(2, 3, 5);
+        sum(100, 20, 180);
+
+        next=()=>{
+            let x = new XMLHttpRequest();
+            x.onload=()=>{
+                let item = JSON.parse(this.responseText)
+                console.log(item);
+                populateText(item)
+            };
+            x.open("GET","https://jsonplaceholder.typicode.com/posts"+(++index))
+            x.send;
+        }
+
+    </script>
+</body>
+
+</html>

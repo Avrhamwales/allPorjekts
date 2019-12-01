@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // let in1 = document.getElementById("in1").value
+        // let in2 = document.getElementById("in2").value
+        // function plus(){
+        //     let in1 = document.getElementById("in1").value
+        //     let in2 = document.getElementById("in2").value
+        //     alert(in1+in2)
+        // }
+        // function minus(){
+        //     alert(in1-in2)
+        // }
+        // function multiplay(){
+        //     alert(in1*in2)
+        // }
+        // function divide(){
+        //     alert(in1/in2)
+        // }
+
+        function calculator (action){
+            let in1 = document.getElementById("in1").value
+            let in2 = document.getElementById("in2").value
+            let num1 = in1*1
+            let num2 = in2*1
+            switch (action) {
+                case "+":
+                    alert(num1+num2)
+                    break;
+
+                case "-":
+                alert (num1-num2)
+                break;
+
+                case "*":
+                alert (num1*num2)
+                break;
+
+                case "/":
+                alert (num1/num2)
+                break;
+            
+                default:
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+    <input id="in1" type="number" value="10">
+    <br>
+    <input id="in2" type="number" value="10">
+    <br>
+    <button id="+" onclick="calculator(this.id)">+</button>
+    <button id="-" onclick="calculator(this.id)">-</button>
+    <button id="*" onclick="calculator(this.id)">*</button>
+    <button id="/" onclick="calculator(this.id)">/</button>
+    
+</body>
+</html>
